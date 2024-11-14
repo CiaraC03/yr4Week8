@@ -23,7 +23,7 @@ jobs:
 
 
     # Steps to set up JDK 17 to run the Java build
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17' #the version of java to be installed
