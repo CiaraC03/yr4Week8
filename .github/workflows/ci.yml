@@ -7,7 +7,7 @@ on:
       - master #run this  workflow on pushes to the main branch
   pull_request:
     branches:
-      -master #run this workflow on pull requests  targeting the main branch
+      - master #run this workflow on pull requests  targeting the main branch
 
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@v2
 
 
-    # Steps to set up JDK 17 to run the Java build
+    # Steps to set up JDK 19 to run the Java build
     - name: Set up JDK 19
       uses: actions/setup-java@v3
       with:
@@ -54,5 +54,5 @@ jobs:
     # Step to push Docker image to Docker hub
     - name: Push Docker Image
       run:
-        docker tag product_pipe_image ${{ secrets.DOCKER_USERNAME }}//product_pipe_image:latest \ 
+        docker tag product_pipe_image ${{ secrets.DOCKER_USERNAME }}/product_pipe_image:latest \ 
         &&  docker push ${{ secrets.DOCKER_USERNAME }}/product_pipe_image:latest
